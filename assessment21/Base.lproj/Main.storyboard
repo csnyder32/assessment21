@@ -20,6 +20,12 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <textField key="tableFooterView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="fn4-Io-fgF">
+                                    <rect key="frame" x="0.0" y="130" width="320" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="eKi-Ct-gsS" detailTextLabel="o7C-NT-cs6" style="IBUITableViewCellStyleSubtitle" id="jza-MQ-7aq">
                                         <rect key="frame" x="0.0" y="86" width="320" height="44"/>
@@ -58,6 +64,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Favorite Cities" id="3M3-qe-7QL">
+                        <barButtonItem key="leftBarButtonItem" title="Add" id="XKt-Ju-fIz">
+                            <connections>
+                                <action selector="onAddButton:" destination="vXZ-lx-hvc" id="x1H-30-xay"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Edit" id="Mmp-xL-4IR">
                             <connections>
                                 <action selector="toggleButton:" destination="vXZ-lx-hvc" id="Gc0-Mf-VYy"/>
@@ -65,6 +76,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="cityAddTextField" destination="fn4-Io-fgF" id="etm-Ha-Oqo"/>
                         <outlet property="cityTableView" destination="xMh-Uq-hBO" id="hNl-p8-YSw"/>
                         <outlet property="editButton" destination="Mmp-xL-4IR" id="ghC-pS-kFO"/>
                     </connections>
