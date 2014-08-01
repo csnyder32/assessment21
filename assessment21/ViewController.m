@@ -67,21 +67,22 @@
 {
     UITableViewCell* cell = [tableView cellForRowAtIndexPath:indexPath];
     cell.textLabel.textColor = [UIColor greenColor];
-    if ([self.editButton.title isEqualToString:@"Done"]) {
-        [self.favoriteCites removeObjectAtIndex:indexPath.row];
-
-    }
- [self.cityTableView reloadData];
 }
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([self.editButton.title isEqualToString:@"Done"])
+    {
+        [self.favoriteCites removeObjectAtIndex:indexPath.row];
+        [self.cityTableView reloadData];
+    }
+
+}
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([self.editButton.title isEqualToString:@"Edit"]) {
     CityViewController *vc = segue.destinationViewController;
     NSIndexPath *indexPath = [self.cityTableView indexPathForSelectedRow];
     vc.awesomeCity = self.favoriteCites[indexPath.row];
-    }else if (![self.editButton.title isEqualToString:@"Edit"])
-    {
-        
-    }
+
 }
 @end
