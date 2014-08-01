@@ -57,9 +57,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Favorite Cities" id="3M3-qe-7QL"/>
+                    <navigationItem key="navigationItem" title="Favorite Cities" id="3M3-qe-7QL">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="Mmp-xL-4IR">
+                            <connections>
+                                <action selector="toggleButton:" destination="vXZ-lx-hvc" id="Gc0-Mf-VYy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="cityTableView" destination="xMh-Uq-hBO" id="hNl-p8-YSw"/>
+                        <outlet property="editButton" destination="Mmp-xL-4IR" id="ghC-pS-kFO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

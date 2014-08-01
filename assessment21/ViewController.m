@@ -13,9 +13,23 @@
 @interface ViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *cityTableView;
 
+@property BOOL buttonToggled;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *editButton;
+
 @end
 
 @implementation ViewController
+- (IBAction)toggleButton:(id)sender
+{
+        if (!self.buttonToggled) {
+            [sender setTitle:@"Done"];
+            self.buttonToggled = YES;
+        }
+        else {
+            [sender setTitle:@"Edit"];
+            self.buttonToggled = NO;
+        }
+    }
 
 - (void)viewDidLoad
 {
@@ -49,19 +63,25 @@
     return self.favoriteCites.count;
 }
 
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (editingStyle == UITableViewCellEditingStyleDelete)
-    {
+    UITableViewCell* cell = [tableView cellForRowAtIndexPath:indexPath];
+    cell.textLabel.textColor = [UIColor greenColor];
+    if ([self.editButton.title isEqualToString:@"Done"]) {
         [self.favoriteCites removeObjectAtIndex:indexPath.row];
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-    } 
+
+    }
+ [self.cityTableView reloadData];
 }
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    if ([self.editButton.title isEqualToString:@"Edit"]) {
     CityViewController *vc = segue.destinationViewController;
     NSIndexPath *indexPath = [self.cityTableView indexPathForSelectedRow];
     vc.awesomeCity = self.favoriteCites[indexPath.row];
-    
+    }else if (![self.editButton.title isEqualToString:@"Edit"])
+    {
+        
+    }
 }
 @end
