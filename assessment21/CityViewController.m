@@ -9,14 +9,15 @@
 #import "CityViewController.h"
 
 @interface CityViewController ()
-@property (weak, nonatomic) IBOutlet UILabel *cityName;
+@property (weak, nonatomic) IBOutlet UILabel *cityNameLabel;
 
-@property (weak, nonatomic) IBOutlet UILabel *stateName;
+@property (weak, nonatomic) IBOutlet UILabel *stateNameLabel;
 @property (weak, nonatomic) IBOutlet UIButton *onEditPressed;
 @property (weak, nonatomic) IBOutlet UIButton *onSavedPressed;
 @property (weak, nonatomic) IBOutlet UITextField *cityEditTextField;
 @property (weak, nonatomic) IBOutlet UITextField *stateEditTextField;
 @property BOOL buttonIsOn;
+@property (weak, nonatomic) IBOutlet UIImageView *cityImageView;
 
 @end
 
@@ -27,8 +28,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.cityName.text = self.awesomeCity.cityName;
-    self.stateName.text = self.awesomeCity.stateName;
+    self.cityNameLabel.text = self.awesomeCity.cityName;
+    self.stateNameLabel.text = self.awesomeCity.stateName;
+    self.cityImageView.image = self.awesomeCity.cityImage;
     self.cityEditTextField.hidden = YES;
     self.stateEditTextField.hidden = YES;
 
@@ -44,8 +46,8 @@
 }
 - (IBAction)onSaveAction:(id)sender
 {
-    self.cityName.text = self.cityEditTextField.text;
-    self.stateName.text = self.stateEditTextField.text;
+    self.cityNameLabel.text = self.cityEditTextField.text;
+    self.stateNameLabel.text = self.stateEditTextField.text;
     self.cityEditTextField.hidden = YES;
     self.stateEditTextField.hidden = YES;
     [self.cityEditTextField resignFirstResponder];

@@ -131,7 +131,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Klr-7w-hrx">
-                                <rect key="frame" x="20" y="125" width="280" height="30"/>
+                                <rect key="frame" x="20" y="120" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -142,8 +142,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="City Information" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0YE-O3-MXY">
-                                <rect key="frame" x="107" y="290" width="122" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="City Picture" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0YE-O3-MXY">
+                                <rect key="frame" x="107" y="290" width="120" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -152,22 +152,22 @@
                                     <outletCollection property="gestureRecognizers" destination="Dh4-Qx-dte" appends="YES" id="AJS-vT-N8a"/>
                                 </connections>
                             </label>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i3V-g1-eME">
-                                <rect key="frame" x="-7" y="319" width="327" height="249"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z7F-ko-de5">
+                                <rect key="frame" x="20" y="328" width="280" height="199"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </webView>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="p4a-Sb-ZQ0"/>
                     <connections>
                         <outlet property="cityEditTextField" destination="Klr-7w-hrx" id="u44-hN-trl"/>
-                        <outlet property="cityName" destination="9sZ-TA-c3M" id="6pE-zv-lGg"/>
+                        <outlet property="cityImageView" destination="z7F-ko-de5" id="Rte-00-Nma"/>
+                        <outlet property="cityNameLabel" destination="9sZ-TA-c3M" id="jS2-KI-CFN"/>
                         <outlet property="onEditPressed" destination="qQo-Gd-9jp" id="R6v-1c-uXe"/>
                         <outlet property="onSavedPressed" destination="mFC-Zo-Nd4" id="8bs-IT-k44"/>
                         <outlet property="stateEditTextField" destination="Cfr-yK-yL5" id="4YO-rf-26m"/>
-                        <outlet property="stateName" destination="bSC-kM-Yh5" id="tPc-F9-aLA"/>
+                        <outlet property="stateNameLabel" destination="bSC-kM-Yh5" id="dBd-1l-hmA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hAb-7a-KDC" userLabel="First Responder" sceneMemberID="firstResponder"/>

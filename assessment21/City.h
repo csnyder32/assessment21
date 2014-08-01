@@ -11,5 +11,6 @@
 @interface City : NSObject
 @property NSString *cityName;
 @property NSString *stateName;
+@property UIImage *cityImage;
 
 @end

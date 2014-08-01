@@ -51,15 +51,19 @@
     City *chicago = [[City alloc]init];
     chicago.cityName = @"Chicago";
     chicago.stateName = @"Illinos";
+    chicago.cityImage = [UIImage imageNamed:@"chicago.png"];
     City *milwaukee = [[City alloc]init];
     milwaukee.cityName = @"Milwaukee";
     milwaukee.stateName = @"Wisconsin";
+    milwaukee.cityImage = [UIImage imageNamed:@"milwaukee.png"];
     City *lasvegas = [[City alloc]init];
     lasvegas.cityName = @"Las Vegas";
     lasvegas.stateName = @"Nevada";
+    lasvegas.cityImage = [UIImage imageNamed:@"vegas.png"];
     City *cleveland = [[City alloc]init];
     cleveland.cityName = @"Cleveland";
     cleveland.stateName = @"Ohio";
+    cleveland.cityImage = [UIImage imageNamed:@"cland.png"];
     self.favoriteCites = [NSMutableArray arrayWithObjects:chicago, milwaukee, lasvegas, cleveland,nil];
 }
 
