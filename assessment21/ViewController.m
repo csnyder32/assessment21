@@ -16,6 +16,7 @@
 @property BOOL buttonToggled;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *editButton;
 @property (weak, nonatomic) IBOutlet UITextField *cityAddTextField;
+@property (weak, nonatomic) IBOutlet UITextField *stateAddTextField;
 
 @end
 
@@ -35,11 +36,15 @@
 {
     City *newCity = [[City alloc]init];
     newCity.cityName = self.cityAddTextField.text;
+    newCity.stateName = self.stateAddTextField.text;
 
     [self.favoriteCites addObject:newCity];
     [self.cityTableView reloadData];
     [self.cityAddTextField resignFirstResponder];
+    [self.stateAddTextField resignFirstResponder];
     self.cityAddTextField.text = @"";
+    self.stateAddTextField.text =@"";
+
 
 
 

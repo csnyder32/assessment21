@@ -7,6 +7,8 @@
 //
 
 #import "CityViewController.h"
+#import "City.h"
+#import "ViewController.h"
 
 @interface CityViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *cityNameLabel;
@@ -52,6 +54,7 @@
     self.stateEditTextField.hidden = YES;
     [self.cityEditTextField resignFirstResponder];
     [self.stateEditTextField resignFirstResponder];
+    
 }
 
 
