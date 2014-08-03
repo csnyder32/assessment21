@@ -21,6 +21,7 @@
 @end
 
 @implementation ViewController
+//toggle a bar button text item
 - (IBAction)toggleButton:(id)sender
 {
         if (!self.buttonToggled) {
@@ -48,27 +49,20 @@
 
 
 
+//this will update teh table based on what was typed in the edit screen
 }
-
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.cityTableView reloadData];
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    City *chicago = [[City alloc]init];
-    chicago.cityName = @"Chicago";
-    chicago.stateName = @"Illinos";
-    chicago.cityImage = [UIImage imageNamed:@"chicago.png"];
-    City *milwaukee = [[City alloc]init];
-    milwaukee.cityName = @"Milwaukee";
-    milwaukee.stateName = @"Wisconsin";
-    milwaukee.cityImage = [UIImage imageNamed:@"milwaukee.png"];
-    City *lasvegas = [[City alloc]init];
-    lasvegas.cityName = @"Las Vegas";
-    lasvegas.stateName = @"Nevada";
-    lasvegas.cityImage = [UIImage imageNamed:@"vegas.png"];
-    City *cleveland = [[City alloc]init];
-    cleveland.cityName = @"Cleveland";
-    cleveland.stateName = @"Ohio";
-    cleveland.cityImage = [UIImage imageNamed:@"cland.png"];
+    City *chicago = [[City alloc]initWithName:@"Chicago" state:@"Illinois" picture:[UIImage imageNamed:@"chicago.png"]];
+    City *milwaukee = [[City alloc]initWithName:@"Milwaukee" state:@"Wisconsin" picture:[UIImage imageNamed:@"milwaukee.png"]];
+    City *lasvegas = [[City alloc]initWithName:@"Las Vegas" state:@"Nevada" picture:[UIImage imageNamed:@"vegas.png"]];
+    City *cleveland = [[City alloc]initWithName:@"Cleveland" state:@"Ohio" picture:[UIImage imageNamed:@"cland.png"]];
     self.favoriteCites = [NSMutableArray arrayWithObjects:chicago, milwaukee, lasvegas, cleveland,nil];
 }
 
@@ -78,6 +72,8 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     cell.textLabel.text = locations.cityName;
     cell.detailTextLabel.text = locations.stateName;
+    cell.imageView.image = locations.cityImage;
+
 
     return cell;
 }

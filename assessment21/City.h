@@ -13,4 +13,5 @@
 @property NSString *stateName;
 @property UIImage *cityImage;
 
+-(instancetype) initWithName: (NSString *) cityName state: (NSString *) stateName picture:(UIImage *)cityImage;
 @end

@@ -10,4 +10,13 @@
 
 @implementation City
 
+-(instancetype) initWithName: (NSString *) cityName state: (NSString *) stateName picture:(UIImage *)cityImage
+{
+    self = [super init];
+    self.cityName = cityName;
+    self.stateName = stateName;
+    self.cityImage = cityImage;
+
+    return  self;
+}
 @end

@@ -10,12 +10,9 @@
 #import "City.h"
 #import "ViewController.h"
 
-@interface CityViewController ()
-@property (weak, nonatomic) IBOutlet UILabel *cityNameLabel;
+@interface CityViewController () <UITextFieldDelegate>
 
-@property (weak, nonatomic) IBOutlet UILabel *stateNameLabel;
-@property (weak, nonatomic) IBOutlet UIButton *onEditPressed;
-@property (weak, nonatomic) IBOutlet UIButton *onSavedPressed;
+
 @property (weak, nonatomic) IBOutlet UITextField *cityEditTextField;
 @property (weak, nonatomic) IBOutlet UITextField *stateEditTextField;
 @property BOOL buttonIsOn;
@@ -30,33 +27,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.cityNameLabel.text = self.awesomeCity.cityName;
-    self.stateNameLabel.text = self.awesomeCity.stateName;
+    self.cityEditTextField.text = self.awesomeCity.cityName;
+    self.stateEditTextField.text = self.awesomeCity.stateName;
     self.cityImageView.image = self.awesomeCity.cityImage;
-    self.cityEditTextField.hidden = YES;
-    self.stateEditTextField.hidden = YES;
+
 
 }
-- (IBAction)onEditAction:(id)sender
+//updates the content of the table view
+-(void)textFieldDidEndEditing:(UITextField *)textField
 {
-    self.cityEditTextField.hidden = NO;
-    self.stateEditTextField.hidden= NO;
-    self.cityEditTextField.text = @"";
-    self.stateEditTextField.text = @"";
-    self.onEditPressed = sender;
-    self.buttonIsOn = !self.buttonIsOn;
-}
-- (IBAction)onSaveAction:(id)sender
-{
-    self.cityNameLabel.text = self.cityEditTextField.text;
-    self.stateNameLabel.text = self.stateEditTextField.text;
-    self.cityEditTextField.hidden = YES;
-    self.stateEditTextField.hidden = YES;
-    [self.cityEditTextField resignFirstResponder];
-    [self.stateEditTextField resignFirstResponder];
-    
-}
+    self.awesomeCity.cityName = self.cityEditTextField.text;
+    self.awesomeCity.stateName = self.stateEditTextField.text;
 
+}
 
 
 @end
